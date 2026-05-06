@@ -160,22 +160,9 @@ const btnTodos = document.querySelector("#btnTodos");
 const btnAprovados = document.querySelector("#btnAprovados");
 const btnReprovados = document.querySelector("#btnReprovados");
 
-function apresentarTodosAlunos() {
-  limpaAlunos();
-  const filtro = filtroTurma.value;
 
-  alunos.map((aluno) => {
-    listaAlunos.innerHTML += "";
-  });
-}
 
-function limpaAlunos() {
-  listaAlunos.innerHTML = "";
-}
-
-btnTodos.addEventListener("click", apresentarTodosAlunos);
-
-// DESAFIOS PARA OS ALUNOS:
+// DESAFIOS:
 // 1. Mostrar todos os alunos na tela usando o array alunos.
 // 2. Criar cards de aluno usando innerHTML ou createElement.
 // 3. Mostrar no card: nome, turma, faltas, nota final e situação.
