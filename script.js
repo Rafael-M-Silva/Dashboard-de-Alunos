@@ -194,10 +194,23 @@ function criaCardAluno(aluno) {
 }
 
 function renderizarAlunos(alunos) {
+  listaAlunos.innerHTML = ""
   alunos.forEach((aluno) => {
     listaAlunos.innerHTML += criaCardAluno(aluno)
   });
 }
+
+function aprovados(alunos) {
+  listaAlunos.innerHTML = ""
+  const alunosAprovados = alunos.filter((aluno) => {
+    return aluno.notaFinal >= 7
+  })
+  renderizarAlunos(alunosAprovados)
+}
+
+btnAprovados.addEventListener("click", ()=> {
+  aprovados(alunos)
+})
 
 btnTodos.addEventListener("click", ()=> {
   renderizarAlunos(alunos)
