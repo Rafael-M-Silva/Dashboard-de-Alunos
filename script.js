@@ -160,61 +160,6 @@ const btnTodos = document.querySelector("#btnTodos");
 const btnAprovados = document.querySelector("#btnAprovados");
 const btnReprovados = document.querySelector("#btnReprovados");
 
-function criaCardAluno(aluno) {
-  return `<div class="card-aluno">
-
-          <!-- Cabeçalho do card -->
-           <div class="card-header">
-            <div class="avatar-aluno">
-              ${aluno.nome.charAt(0)}${aluno.nome.charAt(1)}
-            </div>
-
-            <div>
-              <h3>${aluno.nome}</h3>
-              <p>${aluno.turma}</p>
-            </div>
-          </div>
-
-          <!-- Informações do aluno -->
-           <div class="card-info">
-            <p>
-              <strong>Nota final:</strong> ${aluno.notaFinal}
-            </p>
-
-            <p>
-              <strong>Faltas:</strong> ${aluno.faltas}
-            </p>
-          </div> 
-
-          <!-- Status do aluno -->
-           <div class="card-status">
-            ${aluno.notaFinal >= 7 ? `<span class="status aprovado">Aprovado</span>` : `<span class="status reprovado">Reprovado</span>`}
-          </div>
-        </div>`
-}
-
-function renderizarAlunos(alunos) {
-  listaAlunos.innerHTML = ""
-  alunos.forEach((aluno) => {
-    listaAlunos.innerHTML += criaCardAluno(aluno)
-  });
-}
-
-function aprovados(alunos) {
-  listaAlunos.innerHTML = ""
-  const alunosAprovados = alunos.filter((aluno) => {
-    return aluno.notaFinal >= 7
-  })
-  renderizarAlunos(alunosAprovados)
-}
-
-btnAprovados.addEventListener("click", ()=> {
-  aprovados(alunos)
-})
-
-btnTodos.addEventListener("click", ()=> {
-  renderizarAlunos(alunos)
-})
 
 // DESAFIOS:
 // 1. Mostrar todos os alunos na tela usando o array alunos.
